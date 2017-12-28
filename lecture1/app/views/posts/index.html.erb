@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+<p>Hello from the posts controller, index action!</p>
+
+<%= link_to "Create a Post", posts_new_path %>
+
+<% @posts.each do |post| %>
+	<p>
+		[<%= post.id %>] <%= post.title %>
+	</p>
+	<p>
+		<%= post.body %>		
+	</p>
+	<p>
+		<%= link_to "Show", post %> 
+		<%= link_to 'Edit', edit_post_path(post) %>
+		<%= link_to 'Delete', delete_post_path(post), method: :delete, data:  { confirm: 'Are you sure you want to delete this post?'} %>
+	</p>
+	<hr>
+<% end %>
